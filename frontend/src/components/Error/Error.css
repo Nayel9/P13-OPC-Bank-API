@@ -1,0 +1,34 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0 6rem 0;
+}
+
+.error-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.error-title span{
+    color: #42b983;
+}
+
+.error-link {
+    color: #42b983;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.error-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+    .error-title {
+        font-size: 2rem;
+    }
+}
