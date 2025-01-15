@@ -1,39 +1,52 @@
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
 }
 
 .main-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 .main-nav a.router-link-exact-active {
-  color: #42b983;
+    color: #42b983;
 }
 
 .main-nav-item {
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-  align-items: center;
-  text-decoration: none;
-  margin-right: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 0.5rem;
 }
 
 .main-nav-signin:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .main-nav-logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .main-nav-logo-image {
-  max-width: 100%;
-  width: 200px;
+    max-width: 100%;
+    width: 200px;
+}
+
+.main-nav-user {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.main-nav-user-name {
+    font-weight: bold;
+    color: #2c3e50;
 }
 
