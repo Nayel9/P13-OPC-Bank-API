@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": "677f0a536071f57b3c1a40ad",
+      "email": "tony@stark.com",
+      "firstName": "Tony",
+      "lastName": "Stark",
+      "createdAt": "2025-01-08T23:29:23.413Z",
+      "updatedAt": "2025-01-08T23:29:23.413Z",
+      "accounts": [
+        {
+          "id": 1,
+          "title": "Argent Bank Checking (x8349)",
+          "amount": "$2,082.79",
+          "description": "Available Balance"
+        },
+        {
+          "id": 2,
+          "title": "Argent Bank Savings (x6712)",
+          "amount": "$10,928.42",
+          "description": "Available Balance"
+        },
+        {
+          "id": 3,
+          "title": "Argent Bank Credit Card (x8349)",
+          "amount": "$184.30",
+          "description": "Current Balance"
+        },
+        {
+          "id": 4,
+          "title": "Argent Bank Investment (x1234)",
+          "amount": "$50,000.00",
+          "description": "Investment Balance"
+        }
+      ]
+    },
+    {
+      "id": "677f0a536071f57b3c1a40af",
+      "email": "steve@rogers.com",
+      "firstName": "Steve",
+      "lastName": "Rogers",
+      "createdAt": "2025-01-08T23:29:23.416Z",
+      "updatedAt": "2025-01-08T23:29:23.416Z",
+      "accounts": [
+        {
+          "id": 5,
+          "title": "Argent Bank Checking (x5678)",
+          "amount": "$1,234.56",
+          "description": "Available Balance"
+        },
+        {
+          "id": 6,
+          "title": "Argent Bank Savings (x9101)",
+          "amount": "$7,890.12",
+          "description": "Available Balance"
+        },
+        {
+          "id": 7,
+          "title": "Argent Bank Retirement (x1121)",
+          "amount": "$100,000.00",
+          "description": "Retirement Balance"
+        }
+      ]
+    }
+  ]
+}

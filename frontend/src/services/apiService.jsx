@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from '../store';
+import data from '../data/usersAccount.json';
 
 const apiClient = axios.create({
   baseURL: 'http://localhost:3001/api/v1',
@@ -39,13 +40,22 @@ const apiService = {
     }
   },
 
-  updateProfile: async (profileData) => {
+  updateProfile: async (firstName, lastName) => {
     try {
-      const response = await apiClient.put('/user/profile', profileData);
+      const response = await apiClient.put('/user/profile', { firstName, lastName });
       return response.data;
     } catch (error) {
       throw error.response.data;
     }
+  },
+
+  getAccounts: async (userId) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const user = data.users.find(user => user.id === userId);
+        resolve(user ? user.accounts : []);
+      }, 250); // Simule un délai de réponse
+    });
   },
 };
 

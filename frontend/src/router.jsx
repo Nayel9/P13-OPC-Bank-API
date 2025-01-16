@@ -6,16 +6,17 @@ import ErrorPage from './pages/404/index.jsx';
 import SignIn from './pages/SignIn/index.jsx';
 import UserAccounts from './pages/User/index.jsx';
 import PrivateRoute from './components/PrivateRoute/index.jsx';
-import { setToken } from './store';
+import { setToken, logout } from './store';
 
 const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Vérifie si un token existe dans le stockage local ou de session
-        const token = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+        const token = sessionStorage.getItem('authToken');
         if (token) {
-            dispatch(setToken({ token })); // Définit le token dans le store Redux
+            dispatch(setToken({ token }));
+        } else {
+            dispatch(logout());
         }
     }, [dispatch]);
 
@@ -26,11 +27,7 @@ const App = () => {
                 <Route path="/login" element={<SignIn />} />
                 <Route
                     path="/profile"
-                    element={
-                        <PrivateRoute>
-                            <UserAccounts />
-                        </PrivateRoute>
-                    }
+                    element={<PrivateRoute>{<UserAccounts />}</PrivateRoute>}
                 />
                 <Route path="/*" element={<ErrorPage />} />
             </Routes>

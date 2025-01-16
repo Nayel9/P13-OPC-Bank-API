@@ -1,12 +1,56 @@
 .header {
-  color: #fff;
-  margin-bottom: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.edit-button {
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px;
+.edit-button, .save-button, .cancel-button {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.edit-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header h1 {
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.edit-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edit-name input {
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 2px;
+    width: 150px;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edit-buttons button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 2px;
+    width: 80px;
 }
