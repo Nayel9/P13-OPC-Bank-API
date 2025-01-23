@@ -60,7 +60,7 @@ paths:
   /user/profile:
     post:
       security:
-        - Bearer: [ ]
+        - Bearer: []
       tags:
         - User Module
       summary: User Profile API
@@ -75,7 +75,7 @@ paths:
         - application/json
       responses:
         '200':
-          description: User profile retrieved successully
+          description: User profile retrieved successfully
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
@@ -84,7 +84,7 @@ paths:
           description: Internal Server Error
     put:
       security:
-        - Bearer: [ ]
+        - Bearer: []
       tags:
         - User Module
       summary: User Profile API
@@ -105,13 +105,201 @@ paths:
         - application/json
       responses:
         '200':
-          description: User profile retrieved successully
+          description: User profile updated successfully
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
           description: Invalid Fields
         '500':
           description: Internal Server Error
+  /accounts:
+    get:
+      security:
+        - Bearer: []
+      summary: View all accounts
+      description: Retrieve a list of all accounts.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A list of all accounts.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Account'
+          examples:
+            application/json: |
+              [
+                {
+                  "id": 1,
+                  "title": "Personal Account",
+                  "amount": "$5000.00",
+                  "description": "Primary personal account"
+                }
+              ]
+        '404':
+          description: No accounts found
+  /accounts/{accountId}/transactions:
+    get:
+      security:
+        - Bearer: []
+      summary: View current month's transactions for a specific account
+      description: Retrieve a list of transactions for the specified account and month.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          required: true
+          description: The ID of the account to retrieve transactions for.
+          type: string
+        - name: month
+          in: query
+          required: true
+          description: >
+            The month for which transactions are being retrieved (format: YYYY-MM).
+          type: string
+      responses:
+        '200':
+          description: A list of transactions for the specified account and month.
+          schema:
+            type: object
+            properties:
+              transactions:
+                type: array
+                items:
+                  $ref: '#/definitions/Transaction'
+          examples:
+            application/json: |
+              {
+                "transactions": [
+                  {
+                    "id": "t1",
+                    "date": "2025-01-01",
+                    "description": "Grocery shopping",
+                    "amount": -50.00,
+                    "balance": 950.00,
+                    "transactionType": "Electronic",
+                    "category": "Expenses",
+                    "notes": "Weekly groceries"
+                  }
+                ]
+              }
+        '404':
+          description: Account not found
+  /accounts/{accountId}/transactions/{transactionId}/details:
+    get:
+      security:
+        - Bearer: []
+      summary: View transaction details
+      description: Retrieve details of a specific transaction.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          required: true
+          description: The ID of the account.
+          type: string
+        - name: transactionId
+          in: path
+          required: true
+          description: The ID of the transaction.
+          type: string
+      responses:
+        '200':
+          description: Details of the specified transaction.
+          schema:
+            $ref: '#/definitions/Transaction'
+          examples:
+            application/json: |
+              {
+                "id": "t1",
+                "date": "2025-01-01",
+                "description": "Grocery shopping",
+                "amount": -50.00,
+                "balance": 950.00,
+                "transactionType": "Electronic",
+                "category": "Expenses",
+                "notes": "Weekly groceries"
+              }
+        '404':
+          description: Transaction or account not found
+    put:
+      security:
+        - Bearer: []
+      summary: Update transaction details
+      description: Update details of a specific transaction.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          required: true
+          description: The ID of the account.
+          type: string
+        - name: transactionId
+          in: path
+          required: true
+          description: The ID of the transaction.
+          type: string
+        - in: body
+          name: body
+          description: Details to update
+          required: true
+          schema:
+            type: object
+            properties:
+              transactionType:
+                type: string
+              category:
+                type: string
+              notes:
+                type: string
+      responses:
+        '200':
+          description: Transaction details updated.
+        '404':
+          description: Transaction or account not found
+    delete:
+      security:
+        - Bearer: []
+      summary: Delete transaction details
+      description: Delete a specific transaction.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - name: accountId
+          in: path
+          required: true
+          description: The ID of the account.
+          type: string
+        - name: transactionId
+          in: path
+          required: true
+          description: The ID of the transaction.
+          type: string
+      responses:
+        '200':
+          description: Transaction details deleted.
+        '404':
+          description: Transaction or account not found
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -122,24 +310,24 @@ definitions:
     properties:
       email:
         type: string
-        description: user email
+        description: User email
       password:
         type: string
-        description: user password
+        description: User password
       firstName:
         type: string
-        description: user first name
+        description: User first name
       lastName:
         type: string
-        description: user last name
+        description: User last name
   Login:
     properties:
       email:
         type: string
-        description: user email
+        description: User email
       password:
         type: string
-        description: user password
+        description: User password
   ApiResponse:
     type: object
     properties:
@@ -165,4 +353,35 @@ definitions:
       firstName:
         type: string
       lastName:
+        type: string
+  Account:
+    type: object
+    properties:
+      id:
+        type: integer
+      title:
+        type: string
+      amount:
+        type: string
+      description:
+        type: string
+  Transaction:
+    type: object
+    properties:
+      id:
+        type: string
+      date:
+        type: string
+        format: date
+      description:
+        type: string
+      amount:
+        type: number
+      balance:
+        type: number
+      transactionType:
+        type: string
+      category:
+        type: string
+      notes:
         type: string
