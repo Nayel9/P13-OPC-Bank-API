@@ -44,9 +44,9 @@
     border-color: #00bc77;
     background-color: #00bc77;
     color: #fff;
+    cursor: pointer;
 }
 
-/* LoginForm.css */
 .error-message {
   color: red;
   background-color: #f8d7da;

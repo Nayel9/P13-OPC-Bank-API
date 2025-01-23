@@ -1,0 +1,154 @@
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.transactions-table th {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.transactions-table td {
+    background-color: #ddd;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid #aaa;
+    border-bottom: 2px solid #999;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
+.transactions-table td:first-child {
+    border-left: 2px solid #aaa;
+    padding: 0 0 0 10px;
+}
+
+.transactions-table td:last-child {
+    border-right: 2px solid #aaa;
+}
+
+
+.transaction-details td {
+    background-color: white;
+}
+
+.details-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.detail {
+    display: flex;
+    align-items: baseline;
+    padding: 5px 0;
+    gap: 5px;
+}
+
+.details-edit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.dropdown-icon {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 450ms ease-in-out;
+}
+
+.dropdown-icon-open {
+    transform: rotate(180deg);
+}
+
+.dropdown-icon-close {
+    transform: rotate(0deg);
+}
+
+.category-select {
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: inherit;
+}
+
+.detail-notes {
+    display: flex;
+    align-items: flex-start;
+}
+
+.detail-notes textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .transactions-table {
+        width: 115%;
+    }
+
+    .transactions-table th, .transactions-table td {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+.dropdown-icon {
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    .transactions-table th, .transactions-table td {
+        font-size: 0.6rem;
+        padding: 9px;
+        border: none;
+    }
+
+    .transactions-table {
+        border: none;
+    }
+
+    .transactions-table td:first-child {
+        border-left: none;
+    }
+
+    .transactions-table td:last-child {
+        border-right: none;
+    }
+
+    .dropdown-icon {
+        font-size: 0.8rem;
+    }
+
+    .details-wrapper {
+        padding: 0;
+    }
+
+    .detail {
+        padding: 2px;
+        gap: 2px;
+    }
+
+    .details-edit {
+        font-size: 0.7rem;
+    }
+
+    .category-select {
+        border: 1px solid #ccc;
+        padding: 2px;
+        font-size: 0.6rem;
+        width: 60px;
+    }
+
+
+}

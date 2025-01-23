@@ -5,9 +5,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { setSelectedAccount } from "../../store";
 import AccountDetails from "../AccountDetails";
 import AccountHeader from "../AccountHeader/index.jsx";
+import TransactionsTable from "../TransactionsTable/index.jsx";
+import Loader from "../Loader";
 
 const Account = () => {
   const [accounts, setAccounts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const userId = useSelector((state) => state.user.id);
   const selectedAccount = useSelector((state) => state.user.selectedAccount);
   const dispatch = useDispatch();
@@ -15,8 +18,10 @@ const Account = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       if (userId) {
-        const data = await apiService.getAccounts(userId);
+        setLoading(true);
+        const data = await apiService.getAccounts(userId, setLoading);
         setAccounts(data);
+        setLoading(false);
       }
     };
     fetchAccounts();
@@ -26,12 +31,17 @@ const Account = () => {
     dispatch(setSelectedAccount(account));
   };
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <section className="account-wrapper">
       {!selectedAccount && <AccountHeader />}
       {selectedAccount ? (
-        <div className="account-details">
+        <div className="account">
           <AccountDetails />
+          <TransactionsTable account={selectedAccount} />
         </div>
       ) : (
         <div className="account">
@@ -44,7 +54,7 @@ const Account = () => {
                   {account.description}
                 </p>
               </div>
-              <div className="account-content-wrapper cta">
+              <div className="cta">
                 <button
                   className="transaction-button"
                   onClick={() => handleViewTransactions(account)}
@@ -59,4 +69,5 @@ const Account = () => {
     </section>
   );
 };
+
 export default Account;

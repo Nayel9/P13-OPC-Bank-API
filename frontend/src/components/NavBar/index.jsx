@@ -32,7 +32,7 @@ const NavBar = () => {
             <FaUserCircle className="main-nav-icon" />
             <span className="main-nav-user-name">{firstName}</span>
           </Link>
-          <Link className="main-nav-item" to="/" onClick={handleLogout}>
+          <Link className="main-nav-item" onClick={handleLogout} to="/" >
             <FaSignOutAlt className="main-nav-icon" />
             <span className="main-nav-signout">Logout</span>
           </Link>

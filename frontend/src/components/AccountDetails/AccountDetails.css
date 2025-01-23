@@ -3,21 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     margin: 0 auto;
     padding: 1rem;
 }
 
-.account-details {
-    border: 2px solid #A3ACB7;
-    width: 80%;
-    position: relative;
-}
-
 .account-amount {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
 }
 
 .account-amount-description {
@@ -32,21 +23,20 @@
 }
 
 .account-details-wrapper {
-    flex: 1;
     background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding:1.5rem 1rem;
+    padding: 1.5rem 1rem;
+    width: 110%;
+    position: relative;
 }
 
 .prv-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
     padding: 8px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -54,24 +44,59 @@
     background-color: #00bc77;
     color: #fff;
     border-radius: 2px;
-    position: absolute;
-    right: 0.5rem;
-    bottom: 0.5rem;
+    width: 30px;
+    height: 30px;
 }
 
 .account-details-items {
     margin-left: 0.2rem;
 }
 
+
+.prv {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 0;
+}
+
 @media (min-width: 720px) {
-
-    .account-details-wrapper.prv {
-        flex: 0;
-        display: flex;
-        align-items: center;
+    .account-amount {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: bold;
     }
+}
 
+@media (max-width: 480px) {
+    .bg-dark, .bg-dark-user {
+        padding: 0;
+
+    }
+    .account-wrapper {
+        padding: 0;
+    }
+    .account {
+        width: 100%;
+    }
+    .prv {
+        bottom: 0.2rem;
+        width: 60px;
+        height: 15px;
+        padding: 0;
+        text-align: center;
+        right: inherit;
+
+    }
     .prv-button {
-        width: 35px;
+        padding: 0;
+        font-size: 0.6rem;
+        font-weight: bold;
+        width: 60px;
+        height: 15px;
     }
 }

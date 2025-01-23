@@ -29,7 +29,6 @@ const AccountDetails = () => {
         </button>
       </div>
     </div>
-
   );
 };
 

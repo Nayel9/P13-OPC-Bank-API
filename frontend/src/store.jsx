@@ -13,6 +13,7 @@ const userSlice = createSlice({
     firstName: "",
     lastName: "",
     selectedAccount: null,
+    expandedTransaction: null,
   },
   reducers: {
     setEmail: (state, action) => {
@@ -51,10 +52,14 @@ const userSlice = createSlice({
     resetSelectedAccount: (state) => {
       state.selectedAccount = null;
     },
+    setExpandedTransaction: (state, action) => {
+      state.expandedTransaction =
+          state.expandedTransaction === action.payload ? null : action.payload;
+    },
   },
 });
 
-export const { setEmail, setPassword, setToken, setProfile, setError, logout, setSelectedAccount, resetSelectedAccount } = userSlice.actions;
+export const { setEmail, setPassword, setToken, setProfile, setError,logout, setSelectedAccount, resetSelectedAccount, setExpandedTransaction } = userSlice.actions;
 
 export const login = (email, password) => async (dispatch) => {
   try {

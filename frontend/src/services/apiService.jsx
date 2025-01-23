@@ -9,7 +9,6 @@ const apiClient = axios.create({
   },
 });
 
-// Intercepteur pour ajouter le token à chaque requête
 apiClient.interceptors.request.use((config) => {
   const state = store.getState();
   const token = state.user.token;
@@ -49,12 +48,30 @@ const apiService = {
     }
   },
 
-  getAccounts: async (userId) => {
+  getAccounts: async (userId, setLoading) => {
+    setLoading(true);
     return new Promise((resolve) => {
       setTimeout(() => {
         const user = data.users.find(user => user.id === userId);
         resolve(user ? user.accounts : []);
-      }, 250); // Simule un délai de réponse
+        setLoading(false);
+      }, 350);
+    });
+  },
+
+  getTransactions: async (userId, accountId, setLoading) => {
+    setLoading(true);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const user = data.users.find(user => user.id === userId);
+        if (user) {
+          const account = user.accounts.find(account => account.id === accountId);
+          resolve(account ? account.transactions : []);
+        } else {
+          resolve([]);
+        }
+        setLoading(false);
+      }, 350);
     });
   },
 };
