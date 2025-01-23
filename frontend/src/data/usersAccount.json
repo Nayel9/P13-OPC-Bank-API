@@ -20,9 +20,11 @@
               "description": "Initial deposit",
               "amount": 5000000.00,
               "balance": 5000000.00,
-              "transactionType": "Electronic",
-              "category": "Deposit",
-              "notes": "Fund for innovation"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Deposit",
+                "notes": "Fund for innovation"
+              }
             },
             {
               "id": "t2",
@@ -30,9 +32,11 @@
               "description": "R&D funding",
               "amount": -1000000.00,
               "balance": 4000000.00,
-              "transactionType": "Electronic",
-              "category": "Research",
-              "notes": "Investing in cutting-edge technology"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Research",
+                "notes": "Investing in cutting-edge technology"
+              }
             },
             {
               "id": "t3",
@@ -40,9 +44,11 @@
               "description": "Technology acquisition",
               "amount": -3000000.00,
               "balance": 1000000.00,
-              "transactionType": "Electronic",
-              "category": "Investments",
-              "notes": "Acquiring a new startup"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Investments",
+                "notes": "Acquiring a new startup"
+              }
             },
             {
               "id": "t4",
@@ -50,9 +56,11 @@
               "description": "Government grant",
               "amount": 2000000.00,
               "balance": 3000000.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Supporting the future of AI"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Supporting the future of AI"
+              }
             },
             {
               "id": "t5",
@@ -60,9 +68,11 @@
               "description": "Partnership revenue",
               "amount": 7000000.00,
               "balance": 10000000.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Sharing the vision of innovation"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Sharing the vision of innovation"
+              }
             }
           ]
         },
@@ -78,9 +88,11 @@
               "description": "Interest earned",
               "amount": 10000.00,
               "balance": 5000010.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Tony says: 'Interest? Barely noticeable.'"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Tony says: 'Interest? Barely noticeable.'"
+              }
             },
             {
               "id": "t6",
@@ -88,9 +100,11 @@
               "description": "Transfer to operating fund",
               "amount": -2000000.00,
               "balance": 4800010.00,
-              "transactionType": "Electronic",
-              "category": "Transfer",
-              "notes": "Funding a new AI project"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Transfer",
+                "notes": "Funding a new AI project"
+              }
             },
             {
               "id": "t7",
@@ -98,9 +112,11 @@
               "description": "Income from patent licensing",
               "amount": 40000000.00,
               "balance": 48000010.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Patent revenue streams are solid"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Patent revenue streams are solid"
+              }
             },
             {
               "id": "t24",
@@ -108,9 +124,11 @@
               "description": "Sold equity in minor subsidiary",
               "amount": 5000000.00,
               "balance": 53000010.00,
-              "transactionType": "Electronic",
-              "category": "Investments",
-              "notes": "Streamlining company assets"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Investments",
+                "notes": "Streamlining company assets"
+              }
             },
             {
               "id": "t25",
@@ -118,9 +136,11 @@
               "description": "Purchase: Stark Tower renovations",
               "amount": -2000010.00,
               "balance": 51000000.00,
-              "transactionType": "Electronic",
-              "category": "Real Estate",
-              "notes": "Upgrading the NYC skyline"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Real Estate",
+                "notes": "Upgrading the NYC skyline"
+              }
             },
             {
               "id": "t38",
@@ -128,9 +148,11 @@
               "description": "Dividends from overseas investments",
               "amount": 1000000.00,
               "balance": 52000000.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Global markets, local gains"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Global markets, local gains"
+              }
             }
           ]
         },
@@ -146,9 +168,11 @@
               "description": "Interest earned",
               "amount": 10000.00,
               "balance": 5000010.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Tony says: 'Interest? Barely noticeable.'"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Tony says: 'Interest? Barely noticeable.'"
+              }
             },
             {
               "id": "t6",
@@ -156,9 +180,11 @@
               "description": "Transfer to operating fund",
               "amount": -2000000.00,
               "balance": 4800010.00,
-              "transactionType": "Electronic",
-              "category": "Transfer",
-              "notes": "Funding a new AI project"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Transfer",
+                "notes": "Funding a new AI project"
+              }
             },
             {
               "id": "t7",
@@ -166,9 +192,11 @@
               "description": "Income from patent licensing",
               "amount": 40000000.00,
               "balance": 48000010.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Patent revenue streams are solid"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Patent revenue streams are solid"
+              }
             },
             {
               "id": "t24",
@@ -176,9 +204,11 @@
               "description": "Sold equity in minor subsidiary",
               "amount": 5000000.00,
               "balance": 53000010.00,
-              "transactionType": "Electronic",
-              "category": "Investments",
-              "notes": "Streamlining company assets"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Investments",
+                "notes": "Streamlining company assets"
+              }
             },
             {
               "id": "t25",
@@ -186,9 +216,11 @@
               "description": "Purchase: Stark Tower renovations",
               "amount": -2000010.00,
               "balance": 51000000.00,
-              "transactionType": "Electronic",
-              "category": "Real Estate",
-              "notes": "Upgrading the NYC skyline"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Real Estate",
+                "notes": "Upgrading the NYC skyline"
+              }
             },
             {
               "id": "t36",
@@ -196,9 +228,11 @@
               "description": "Armor Suit Upgrade",
               "amount": -1000000.00,
               "balance": 50000000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Investing in a smarter, safer future"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Investing in a smarter, safer future"
+              }
             },
             {
               "id": "t37",
@@ -206,9 +240,11 @@
               "description": "Bought long-term government bonds",
               "amount": -2000000.00,
               "balance": 48000000.00,
-              "transactionType": "Electronic",
-              "category": "Investments",
-              "notes": "Stark's way of saying 'I trust you… sort of.'"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Investments",
+                "notes": "Stark's way of saying 'I trust you… sort of.'"
+              }
             }
           ]
         },
@@ -224,9 +260,11 @@
               "description": "Luxury vacation in Maldives",
               "amount": -250000.00,
               "balance": 750000.00,
-              "transactionType": "Electronic",
-              "category": "Travel",
-              "notes": "Recharge before saving the world again"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Travel",
+                "notes": "Recharge before saving the world again"
+              }
             },
             {
               "id": "t9",
@@ -234,9 +272,11 @@
               "description": "Purchase: Rare art for penthouse",
               "amount": -50000.00,
               "balance": 700000.00,
-              "transactionType": "Electronic",
-              "category": "Luxury",
-              "notes": "Adding flair to the Manhattan tower"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Luxury",
+                "notes": "Adding flair to the Manhattan tower"
+              }
             },
             {
               "id": "t10",
@@ -244,9 +284,11 @@
               "description": "Sold classic car from collection",
               "amount": 100000.00,
               "balance": 750000.00,
-              "transactionType": "Electronic",
-              "category": "Sale",
-              "notes": "Space for a new electric prototransactionType"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Sale",
+                "notes": "Space for a new electric prototransactionType"
+              }
             },
             {
               "id": "t26",
@@ -254,9 +296,11 @@
               "description": "Private chef expenses",
               "amount": -20000.00,
               "balance": 730000.00,
-              "transactionType": "Electronic",
-              "category": "Dining",
-              "notes": "Feeding guests at Stark Tower gala"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Dining",
+                "notes": "Feeding guests at Stark Tower gala"
+              }
             },
             {
               "id": "t27",
@@ -264,9 +308,11 @@
               "description": "Purchase: Custom suits for gala",
               "amount": -50000.00,
               "balance": 680000.00,
-              "transactionType": "Electronic",
-              "category": "Fashion",
-              "notes": "Stylish, as always"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Fashion",
+                "notes": "Stylish, as always"
+              }
             },
             {
               "id": "t38",
@@ -274,9 +320,11 @@
               "description": "Bought vintage wines for cellar",
               "amount": -30000.00,
               "balance": 650000.00,
-              "transactionType": "Electronic",
-              "category": "Luxury",
-              "notes": "Cheers to never-ending success"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Luxury",
+                "notes": "Cheers to never-ending success"
+              }
             },
             {
               "id": "t39",
@@ -284,9 +332,11 @@
               "description": "Sold collectible watches",
               "amount": 30000.00,
               "balance": 680000.00,
-              "transactionType": "Electronic",
-              "category": "Sale",
-              "notes": "Making room for futuristic tech"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Sale",
+                "notes": "Making room for futuristic tech"
+              }
             }
           ]
         },
@@ -302,9 +352,11 @@
               "description": "Payroll distribution",
               "amount": -7500000.00,
               "balance": 25000000.00,
-              "transactionType": "Electronic",
-              "category": "Salaries",
-              "notes": "Keeping the brilliant minds happy"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Salaries",
+                "notes": "Keeping the brilliant minds happy"
+              }
             },
             {
               "id": "t12",
@@ -312,9 +364,11 @@
               "description": "R&D materials purchase",
               "amount": -2000000.00,
               "balance": 23000000.00,
-              "transactionType": "Electronic",
-              "category": "Research",
-              "notes": "Materials for next-gen armor prototransactionTypes"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Research",
+                "notes": "Materials for next-gen armor prototransactionTypes"
+              }
             },
             {
               "id": "t13",
@@ -322,9 +376,11 @@
               "description": "Government defense contract income",
               "amount": 15000000.00,
               "balance": 38000000.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "Another Stark innovation ready for action"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "Another Stark innovation ready for action"
+              }
             },
             {
               "id": "t28",
@@ -332,9 +388,11 @@
               "description": "Marketing expenses for Stark AI",
               "amount": -5000000.00,
               "balance": 33000000.00,
-              "transactionType": "Electronic",
-              "category": "Marketing",
-              "notes": "The world needs to know"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Marketing",
+                "notes": "The world needs to know"
+              }
             },
             {
               "id": "t29",
@@ -342,9 +400,11 @@
               "description": "Acquisition of tech startup",
               "amount": -5000000.00,
               "balance": 28000000.00,
-              "transactionType": "Electronic",
-              "category": "Investments",
-              "notes": "Expanding the Stark empire"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Investments",
+                "notes": "Expanding the Stark empire"
+              }
             },
             {
               "id": "t40",
@@ -352,9 +412,11 @@
               "description": "Utility costs for global facilities",
               "amount": -250000.00,
               "balance": 27750000.00,
-              "transactionType": "Electronic",
-              "category": "Operations",
-              "notes": "Keeping the lights on for brilliance"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Operations",
+                "notes": "Keeping the lights on for brilliance"
+              }
             },
             {
               "id": "t41",
@@ -362,9 +424,11 @@
               "description": "Sponsorship of tech summit",
               "amount": -500000.00,
               "balance": 27250000.00,
-              "transactionType": "Electronic",
-              "category": "Marketing",
-              "notes": "Spreading the Stark vision"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Marketing",
+                "notes": "Spreading the Stark vision"
+              }
             }
           ]
         },
@@ -380,9 +444,11 @@
               "description": "Donation: Renewable energy programs",
               "amount": -3000000.00,
               "balance": 9700000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "For a greener tomorrow"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "For a greener tomorrow"
+              }
             },
             {
               "id": "t15",
@@ -390,9 +456,11 @@
               "description": "Medical aid for war zones",
               "amount": -2000000.00,
               "balance": 7700000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Helping those in need"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Helping those in need"
+              }
             },
             {
               "id": "t16",
@@ -400,9 +468,11 @@
               "description": "Education scholarships",
               "amount": -1000000.00,
               "balance": 6700000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Funding future innovators"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Education",
+                "notes": "Investing in future leaders"
+              }
             },
             {
               "id": "t30",
@@ -410,9 +480,11 @@
               "description": "Emergency disaster relief fund",
               "amount": -2000000.00,
               "balance": 4700000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Rapid response to global crises"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Rapid response to global crises"
+              }
             },
             {
               "id": "t31",
@@ -420,9 +492,11 @@
               "description": "Partnership with UN initiatives",
               "amount": -1000000.00,
               "balance": 3700000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Global unity for progress"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Global unity for progress"
+              }
             },
             {
               "id": "t42",
@@ -430,9 +504,11 @@
               "description": "Donation: Clean water project",
               "amount": -1500000.00,
               "balance": 2200000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Access to clean water for all"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Access to clean water for all"
+              }
             },
             {
               "id": "t43",
@@ -440,9 +516,11 @@
               "description": "Sponsored STEM workshops",
               "amount": -2200000.00,
               "balance": 12500000.00,
-              "transactionType": "Electronic",
-              "category": "Education",
-              "notes": "Inspiring young scientists"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Education",
+                "notes": "Inspiring young scientists"
+              }
             }
           ]
         }
@@ -468,9 +546,11 @@
               "description": "Grocery shopping",
               "amount": -200.00,
               "balance": 14600.00,
-              "transactionType": "Electronic",
-              "category": "Expenses",
-              "notes": "Super soldier diet isn’t cheap"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Expenses",
+                "notes": "Super soldier diet isn’t cheap"
+              }
             },
             {
               "id": "t18",
@@ -478,9 +558,11 @@
               "description": "Charity donation",
               "amount": -500.00,
               "balance": 14100.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Supporting veterans"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Supporting veterans"
+              }
             },
             {
               "id": "t19",
@@ -488,9 +570,11 @@
               "description": "Gym membership renewal",
               "amount": -150.00,
               "balance": 13950.00,
-              "transactionType": "Electronic",
-              "category": "Fitness",
-              "notes": "Even heroes need to stay fit"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Fitness",
+                "notes": "Even heroes need to stay fit"
+              }
             },
             {
               "id": "t32",
@@ -498,9 +582,11 @@
               "description": "Movie night expenses",
               "amount": -50.00,
               "balance": 13900.00,
-              "transactionType": "Electronic",
-              "category": "Leisure",
-              "notes": "Caught up on the classics"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Leisure",
+                "notes": "For catching up on some movies"
+              }
             },
             {
               "id": "t33",
@@ -508,9 +594,11 @@
               "description": "Deposit from SHIELD pension",
               "amount": 2000.00,
               "balance": 15900.00,
-              "transactionType": "Electronic",
-              "category": "Income",
-              "notes": "For services rendered"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Income",
+                "notes": "For services rendered"
+              }
             },
             {
               "id": "t44",
@@ -518,9 +606,11 @@
               "description": "Maintenance of vintage motorcycle",
               "amount": -1100.00,
               "balance": 14800.00,
-              "transactionType": "Electronic",
-              "category": "Hobbies",
-              "notes": "Keeping the old Harley running"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Hobbies",
+                "notes": "Keeping the old Harley running"
+              }
             }
           ]
         },
@@ -536,9 +626,11 @@
               "description": "Scholarship awards",
               "amount": -300000.00,
               "balance": 2350000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Helping the next generation"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Helping the next generation"
+              }
             },
             {
               "id": "t21",
@@ -546,9 +638,11 @@
               "description": "Veterans housing project",
               "amount": -500000.00,
               "balance": 2050000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "A home for every hero"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "A home for every hero"
+              }
             },
             {
               "id": "t22",
@@ -556,9 +650,11 @@
               "description": "Community event sponsorship",
               "amount": -100000.00,
               "balance": 1550000.00,
-              "transactionType": "Electronic",
-              "category": "Community",
-              "notes": "Promoting unity and service"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Community",
+                "notes": "Promoting unity and service"
+              }
             },
             {
               "id": "t34",
@@ -566,9 +662,11 @@
               "description": "Medical assistance for veterans",
               "amount": -150000.00,
               "balance": 1450000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Care for those who served"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Care for those who served"
+              }
             },
             {
               "id": "t35",
@@ -576,9 +674,11 @@
               "description": "Donation: Youth leadership programs",
               "amount": -50000.00,
               "balance": 1300000.00,
-              "transactionType": "Electronic",
-              "category": "Charity",
-              "notes": "Inspiring future leaders"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Charity",
+                "notes": "Inspiring future leaders"
+              }
             },
             {
               "id": "t45",
@@ -586,9 +686,11 @@
               "description": "Event: Captain America Day",
               "amount": -50000.00,
               "balance": 1200000.00,
-              "transactionType": "Electronic",
-              "category": "Community",
-              "notes": "Celebrating heroism and service"
+              "details": {
+                "transactionType": "Electronic",
+                "category": "Community",
+                "notes": "Celebrating heroism and service"
+              }
             }
           ]
         }

@@ -76,7 +76,7 @@ const TransactionsTable = () => {
     setTransactions((prevTransactions) =>
       prevTransactions.map((transaction) =>
         transaction.id === transactionId
-          ? { ...transaction, [editingField]: editingValue }
+          ? { ...transaction, details: { ...transaction.details, [editingField]: editingValue } }
           : transaction,
       ),
     );
@@ -114,7 +114,7 @@ const TransactionsTable = () => {
                 <td colSpan="4">
                   <div className="details-wrapper">
                     <div className="detail">
-                      <strong>Transaction Type:</strong> {transaction.type}
+                      <strong>Transaction Type:</strong> {transaction.details.transactionType}
                     </div>
                     <div className="detail detail-category">
                       <strong>Category:</strong>
@@ -133,14 +133,14 @@ const TransactionsTable = () => {
                         </select>
                       ) : (
                         <>
-                          {transaction.category}{" "}
+                          {transaction.details.category}{" "}
                           <button
                             className="details-edit"
                             onClick={(e) =>
                               handleDetailsEdit(
                                 e,
                                 "category",
-                                transaction.category,
+                                transaction.details.category,
                               )
                             }
                           >
@@ -159,11 +159,11 @@ const TransactionsTable = () => {
                         />
                       ) : (
                         <>
-                          {transaction.notes}{" "}
+                          {transaction.details.notes}{" "}
                           <button
                             className="details-edit"
                             onClick={(e) =>
-                              handleDetailsEdit(e, "notes", transaction.notes)
+                              handleDetailsEdit(e, "notes", transaction.details.notes)
                             }
                           >
                             <MdEdit />

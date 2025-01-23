@@ -60,7 +60,7 @@ paths:
   /user/profile:
     post:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       tags:
         - User Module
       summary: User Profile API
@@ -84,7 +84,7 @@ paths:
           description: Internal Server Error
     put:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       tags:
         - User Module
       summary: User Profile API
@@ -115,7 +115,7 @@ paths:
   /accounts:
     get:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       summary: View all accounts
       description: Retrieve a list of all accounts.
       parameters:
@@ -146,7 +146,7 @@ paths:
   /accounts/{accountId}/transactions:
     get:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       summary: View current month's transactions for a specific account
       description: Retrieve a list of transactions for the specified account and month.
       parameters:
@@ -179,16 +179,13 @@ paths:
           examples:
             application/json: |
               {
-                "transactions": [
+                "transactions":[ 
                   {
                     "id": "t1",
                     "date": "2025-01-01",
                     "description": "Grocery shopping",
                     "amount": -50.00,
-                    "balance": 950.00,
-                    "transactionType": "Electronic",
-                    "category": "Expenses",
-                    "notes": "Weekly groceries"
+                    "balance": 950.00                    
                   }
                 ]
               }
@@ -197,7 +194,7 @@ paths:
   /accounts/{accountId}/transactions/{transactionId}/details:
     get:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       summary: View transaction details
       description: Retrieve details of a specific transaction.
       parameters:
@@ -224,20 +221,17 @@ paths:
           examples:
             application/json: |
               {
-                "id": "t1",
-                "date": "2025-01-01",
-                "description": "Grocery shopping",
-                "amount": -50.00,
-                "balance": 950.00,
-                "transactionType": "Electronic",
-                "category": "Expenses",
-                "notes": "Weekly groceries"
+                "details": {
+                  "transactionType": "Electronic",
+                  "category": "Charity",
+                  "notes": "Helping the next generation"
+                }
               }
         '404':
           description: Transaction or account not found
     put:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       summary: Update transaction details
       description: Update details of a specific transaction.
       parameters:
@@ -276,7 +270,7 @@ paths:
           description: Transaction or account not found
     delete:
       security:
-        - Bearer: []
+        - Bearer: [ ]
       summary: Delete transaction details
       description: Delete a specific transaction.
       parameters:
