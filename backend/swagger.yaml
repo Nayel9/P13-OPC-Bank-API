@@ -116,6 +116,8 @@ paths:
     get:
       security:
         - Bearer: [ ]
+      tags:
+        - Transactions Module
       summary: View all accounts
       description: Retrieve a list of all accounts.
       parameters:
@@ -141,12 +143,20 @@ paths:
                   "description": "Primary personal account"
                 }
               ]
+        '401':
+          description: Unauthorized - Invalid or missing token
+        '403':
+          description: Forbidden - Access denied
         '404':
-          description: No accounts found
+          description: Accounts not found
+        '500':
+          description: Internal Server Error
   /accounts/{accountId}/transactions:
     get:
       security:
         - Bearer: [ ]
+      tags:
+        - Transactions Module
       summary: View current month's transactions for a specific account
       description: Retrieve a list of transactions for the specified account and month.
       parameters:
@@ -179,22 +189,32 @@ paths:
           examples:
             application/json: |
               {
-                "transactions":[ 
+                "transactions":[
                   {
                     "id": "t1",
                     "date": "2025-01-01",
                     "description": "Grocery shopping",
                     "amount": -50.00,
-                    "balance": 950.00                    
+                    "balance": 950.00
                   }
                 ]
               }
+        '400':
+          description: Bad Request - Invalid parameters
+        '401':
+          description: Unauthorized - Invalid or missing token
+        '403':
+          description: Forbidden - Access denied
         '404':
           description: Account not found
-  /accounts/{accountId}/transactions/{transactionId}/details:
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionId}/details:
     get:
       security:
         - Bearer: [ ]
+      tags:
+        - Transactions Module
       summary: View transaction details
       description: Retrieve details of a specific transaction.
       parameters:
@@ -202,11 +222,6 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-          type: string
-        - name: accountId
-          in: path
-          required: true
-          description: The ID of the account.
           type: string
         - name: transactionId
           in: path
@@ -227,11 +242,22 @@ paths:
                   "notes": "Helping the next generation"
                 }
               }
+        '400':
+          description: Bad Request - Invalid parameters
+        '401':
+          description: Unauthorized - Invalid or missing token
+        '403':
+          description: Forbidden - Access denied
         '404':
-          description: Transaction or account not found
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+
     put:
       security:
         - Bearer: [ ]
+      tags:
+        - Transactions Module
       summary: Update transaction details
       description: Update details of a specific transaction.
       parameters:
@@ -239,11 +265,6 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-          type: string
-        - name: accountId
-          in: path
-          required: true
-          description: The ID of the account.
           type: string
         - name: transactionId
           in: path
@@ -266,11 +287,22 @@ paths:
       responses:
         '200':
           description: Transaction details updated.
+        '400':
+          description: Bad Request - Invalid parameters
+        '401':
+          description: Unauthorized - Invalid or missing token
+        '403':
+          description: Forbidden - Access denied
         '404':
-          description: Transaction or account not found
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+
     delete:
       security:
         - Bearer: [ ]
+      tags:
+        - Transactions Module
       summary: Delete transaction details
       description: Delete a specific transaction.
       parameters:
@@ -278,11 +310,6 @@ paths:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-          type: string
-        - name: accountId
-          in: path
-          required: true
-          description: The ID of the account.
           type: string
         - name: transactionId
           in: path
@@ -292,8 +319,16 @@ paths:
       responses:
         '200':
           description: Transaction details deleted.
+        '400':
+          description: Bad Request - Invalid parameters
+        '401':
+          description: Unauthorized - Invalid or missing token
+        '403':
+          description: Forbidden - Access denied
         '404':
-          description: Transaction or account not found
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
 securityDefinitions:
   Bearer:
     type: apiKey

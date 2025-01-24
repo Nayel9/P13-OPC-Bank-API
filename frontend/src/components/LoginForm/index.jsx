@@ -56,9 +56,7 @@ const LoginForm = () => {
   }, [error, navigate]);
 
   useEffect(() => {
-
     dispatch(setError(null));
-
 
     return () => {
       dispatch(setError(null));
@@ -69,7 +67,9 @@ const LoginForm = () => {
     <div className="sign-in-content">
       <FaUserCircle className="sign-in-icon" />
       <h1>Sign In</h1>
-      {error && <div className="error-message">{error}</div>}
+      {error && (
+        <div className="error-message">Invalid Username or Password</div>
+      )}
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <label htmlFor="username">Username</label>
