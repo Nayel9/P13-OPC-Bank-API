@@ -4,6 +4,10 @@ import { useState } from "react";
 import { setProfile } from "../../store";
 import apiService from "../../services/apiService";
 
+/**
+ * Composant pour afficher et éditer le nom de l'utilisateur dans l'en-tête du compte.
+ * @returns {JSX.Element} Le composant AccountHeader avec le nom de l'utilisateur et les options d'édition.
+ */
 const AccountHeader = () => {
   const dispatch = useDispatch();
   const firstName = useSelector((state) => state.user.firstName);
@@ -12,12 +16,18 @@ const AccountHeader = () => {
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
 
+  /**
+   * Gère le clic sur le bouton d'édition.
+   */
   const handleEditClick = () => {
     setNewFirstName(firstName);
     setNewLastName(lastName);
     setIsEditing(true);
   };
 
+  /**
+   * Gère le clic sur le bouton de sauvegarde.
+   */
   const handleSaveClick = async () => {
     try {
       await apiService.updateProfile(newFirstName, newLastName);
@@ -28,9 +38,13 @@ const AccountHeader = () => {
     }
   };
 
+  /**
+   * Gère le clic sur le bouton d'annulation.
+   */
   const handleCancelClick = () => {
     setIsEditing(false);
   };
+
   return (
     <div className="header">
       {isEditing ? (

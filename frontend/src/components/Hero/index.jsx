@@ -1,5 +1,9 @@
 import './Hero.css';
 
+/**
+ * Composant pour afficher le contenu promotionnel de l'application.
+ * @returns {JSX.Element} Le composant Hero avec les messages promotionnels.
+ */
 const Hero = () => (
   <div className="hero">
     <section className="hero-content">

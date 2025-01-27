@@ -7,6 +7,11 @@ import { MdEdit } from "react-icons/md";
 import Loader from "../Loader";
 import "./TransactionsTable.css";
 
+/**
+ * Composant pour afficher le tableau des transactions.
+ * @component
+ * @returns {JSX.Element} Le composant TransactionsTable.
+ */
 const TransactionsTable = () => {
   const [categoryOptions] = useState([
     "Income",
@@ -25,6 +30,7 @@ const TransactionsTable = () => {
   const userId = useSelector((state) => state.user.id);
   const selectedAccount = useSelector((state) => state.user.selectedAccount);
 
+  // Récupère les transactions de l'utilisateur pour le compte sélectionné
   useEffect(() => {
     async function fetchTransactions() {
       if (selectedAccount && userId) {
@@ -32,7 +38,7 @@ const TransactionsTable = () => {
         const transactions = await apiService.getTransactions(
           userId,
           selectedAccount.id,
-          setLoading
+          setLoading,
         );
         const sortedTransactions = [...transactions].sort(
           (a, b) => new Date(b.date) - new Date(a.date),
@@ -45,16 +51,19 @@ const TransactionsTable = () => {
     fetchTransactions();
   }, [selectedAccount, userId]);
 
+  // Réinitialise l'état expandedTransaction lors du démontage du composant
   useEffect(() => {
     return () => {
       dispatch(setExpandedTransaction(null));
     };
   }, [dispatch]);
 
+  // Gère le clic sur une ligne de transaction pour afficher les détails
   const handleRowClick = (transactionId) => {
     dispatch(setExpandedTransaction(transactionId));
   };
 
+  // Gère l'icône de déroulement pour afficher les détails de la transaction
   const handleDropdownIcon = (transactionId) => {
     const isOpen = expandedTransaction === transactionId;
     return (
@@ -66,17 +75,22 @@ const TransactionsTable = () => {
     );
   };
 
+  // Gère l'édition des détails de la transaction
   const handleDetailsEdit = (e, field, value) => {
     e.stopPropagation();
     setEditingField(field);
     setEditingValue(value);
   };
 
+  // Sauvegarde les modifications des détails de la transaction
   const handleSaveEdit = (transactionId) => {
     setTransactions((prevTransactions) =>
       prevTransactions.map((transaction) =>
         transaction.id === transactionId
-          ? { ...transaction, details: { ...transaction.details, [editingField]: editingValue } }
+          ? {
+              ...transaction,
+              details: { ...transaction.details, [editingField]: editingValue },
+            }
           : transaction,
       ),
     );
@@ -114,7 +128,8 @@ const TransactionsTable = () => {
                 <td colSpan="4">
                   <div className="details-wrapper">
                     <div className="detail">
-                      <strong>Transaction Type:</strong> {transaction.details.transactionType}
+                      <strong>Transaction Type:</strong>{" "}
+                      {transaction.details.transactionType}
                     </div>
                     <div className="detail detail-category">
                       <strong>Category:</strong>
@@ -125,11 +140,11 @@ const TransactionsTable = () => {
                           onChange={(e) => setEditingValue(e.target.value)}
                           onBlur={() => handleSaveEdit(transaction.id)}
                         >
-                            {categoryOptions.map((option) => (
-                              <option key={option} value={option}>
-                                {option}
-                              </option>
-                            ))}
+                          {categoryOptions.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
                         </select>
                       ) : (
                         <>
@@ -163,7 +178,11 @@ const TransactionsTable = () => {
                           <button
                             className="details-edit"
                             onClick={(e) =>
-                              handleDetailsEdit(e, "notes", transaction.details.notes)
+                              handleDetailsEdit(
+                                e,
+                                "notes",
+                                transaction.details.notes,
+                              )
                             }
                           >
                             <MdEdit />
