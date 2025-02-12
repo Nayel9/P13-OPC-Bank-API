@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
       const error = useSelector((state) => state.user.error);
       const [rememberMe, setRememberMe] = useState(false);
 
-      // Récupère l'email sauvegardé dans le localStorage si l'utilisateur a choisi "Remember me"
+      // Récupère l'email ou username sauvegardé dans le localStorage si l'utilisateur a choisi "Remember me"
       useEffect(() => {
         const savedEmail = localStorage.getItem("rememberedEmail");
         if (savedEmail) {
