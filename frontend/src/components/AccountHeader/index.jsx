@@ -12,9 +12,11 @@ const AccountHeader = () => {
   const dispatch = useDispatch();
   const firstName = useSelector((state) => state.user.firstName);
   const lastName = useSelector((state) => state.user.lastName);
+  const userId = useSelector((state) => state.user.id);
   const [isEditing, setIsEditing] = useState(false);
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
+  const [error, setError] = useState("");
 
   /**
    * Gère le clic sur le bouton d'édition.
@@ -26,18 +28,40 @@ const AccountHeader = () => {
   };
 
   /**
+   * Valide les champs de saisie.
+   * @param {string} firstName - Le prénom à valider.
+   * @param {string} lastName - Le nom de famille à valider.
+   * @returns {boolean} True si les champs sont valides, sinon False.
+   */
+  const validateFields = (firstName, lastName) => {
+    const nameRegex = /^[A-Za-z]+$/;
+    if (!firstName || !lastName) {
+      setError("Fields cannot be empty.");
+      return false;
+    }
+    if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+      setError("Fields can only contain letters.");
+      return false;
+    }
+    setError("");
+    return true;
+  };
+
+  /**
    * Gère le clic sur le bouton de sauvegarde.
    */
   const handleSaveClick = async () => {
+    if (!validateFields(newFirstName, newLastName)) {
+      return;
+    }
     try {
       await apiService.updateProfile(newFirstName, newLastName);
-      dispatch(setProfile({ firstName: newFirstName, lastName: newLastName }));
+      dispatch(setProfile({ id: userId, firstName: newFirstName, lastName: newLastName }));
       setIsEditing(false);
     } catch (error) {
       console.error("Failed to update profile:", error);
     }
   };
-
   /**
    * Gère le clic sur le bouton d'annulation.
    */
@@ -62,6 +86,7 @@ const AccountHeader = () => {
               onChange={(e) => setNewLastName(e.target.value)}
             />
           </div>
+          {error && <p className="error-message">{error}</p>}
           <div className="edit-buttons">
             <button className="save-button" onClick={handleSaveClick}>
               Save
